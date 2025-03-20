@@ -7,7 +7,7 @@
     padding: 40px 20px;
     text-align: center;
     margin-top: auto; /* Важно: прижимает футер вниз */
-  }
+}
 
 /* Контейнер футера */
 .footer-container {
@@ -74,4 +74,31 @@
     margin-top: 20px;
     font-size: 14px;
     color: #777;
+}
+
+/* Мобильная адаптация (не трогая стили на ПК) */
+@media (max-width: 600px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    
+    .footer-logo {
+        width: 80px;
+    }
+    
+    .footer-title {
+        font-size: 18px;
+    }
+    
+    .footer-socials {
+        gap: 10px;
+    }
+    
+    .footer-info {
+        gap: 8px;
+    }
+    
+    .footer-bottom {
+        font-size: 12px;
+    }
 }

@@ -214,3 +214,52 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 600px) {
+  /* Корректируем ширину карточки и отступы */
+  .car-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+  
+  /* Уменьшаем отступы в блоке информации */
+  .car-card__info {
+    padding: 15px;
+  }
+  
+  /* Корректируем размеры заголовка и подзаголовка */
+  .car-card__name {
+    font-size: 18px;
+  }
+  .car-card__subname {
+    font-size: 12px;
+  }
+  
+  /* Уменьшаем размер и отступы спецификаций */
+  .car-card__specs {
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  /* Корректируем размеры строки цены */
+  .car-card__price-row {
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+  .car-card__price-value {
+    font-size: 16px;
+  }
+  
+  /* Корректируем кнопку "Узнать цену под ключ" */
+  .car-card__button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  /* Корректируем кнопки подбора и Telegram */
+  .car-button,
+  .car-button-telegram {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}

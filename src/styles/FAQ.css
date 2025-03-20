@@ -194,4 +194,52 @@
       opacity: 1;
     }
   }
-  
+  @media (max-width: 900px) {
+    .faq-container {
+        flex-direction: column;
+    }
+
+    .faq-form {
+        margin-top: 20px;
+    }
+}
+
+/* Дополнительная адаптация для очень узких экранов (до 600px) */
+@media (max-width: 600px) {
+    /* Уменьшаем внутренние отступы секции FAQ */
+    .faq-section {
+        padding: 30px 15px;
+    }
+    
+    /* Корректируем размеры заголовка */
+    .faq-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    /* Уменьшаем размер и отступы вопросов */
+    .faq-question {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    /* Корректируем размеры ответа */
+    .faq-answer-content {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    /* Уменьшаем размеры полей формы */
+    .faq-input, 
+    .faq-textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    /* Корректируем размеры кнопки формы */
+    .faq-submit {
+        width: 120px;
+        padding: 10px;
+        font-size: 16px;
+    }
+}

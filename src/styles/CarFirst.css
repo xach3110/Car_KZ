@@ -198,3 +198,60 @@
         bottom: 10px;
     }
 }
+@media (max-width: 600px) {
+    /* Уменьшаем внутренние отступы баннера */
+    .car-banner {
+        padding: 20px;
+    }
+    
+    /* Корректируем заголовок и описание */
+    .banner-left h1 {
+        font-size: 28px;
+    }
+    
+    .banner-left p {
+        font-size: 16px;
+    }
+    
+    /* Корректируем размеры кнопки */
+    .banner-button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    /* Статистика: располагаем по вертикали и уменьшаем отступы */
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .stats h3 {
+        font-size: 22px;
+    }
+    
+    .stats p {
+        font-size: 12px;
+    }
+    
+    /* Изображение: делаем контейнер адаптивным */
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+    
+    .car-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Пагинация: уменьшаем размеры точек */
+    .slider-dots {
+        gap: 4px;
+    }
+    
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+}

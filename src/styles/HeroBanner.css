@@ -108,3 +108,29 @@
         opacity: 1;
     }
 }
+@media (max-width: 600px) {
+    .hero-banner {
+      width: 95%;
+      height: 50vh;
+    }
+  
+    .hero-overlay {
+      padding: 0 20px;
+      align-items: center; /* Центрирование содержимого */
+    }
+  
+    .hero-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .hero-subtitle {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .hero-button {
+      width: 80%;
+      font-size: 0.9rem;
+    }
+  }

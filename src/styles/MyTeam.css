@@ -83,7 +83,7 @@
   object-fit: cover;
 }
 
-/* Адаптивность */
+/* Мобильная адаптация (не влияет на стили ПК) */
 @media (max-width: 768px) {
   .team-section {
     flex-direction: column;
@@ -97,5 +97,25 @@
   
   .team-image {
     max-width: 100%;
+    width: auto;
+  }
+}
+
+/* Дополнительная адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+  .team-title {
+    font-size: 24px;
+  }
+  
+  .team-subtitle {
+    font-size: 14px;
+  }
+  
+  .team-section-wrapper {
+    padding: 20px;
+  }
+  
+  .team-description {
+    font-size: 16px;
   }
 }
