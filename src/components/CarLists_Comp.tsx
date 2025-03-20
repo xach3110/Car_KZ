@@ -142,7 +142,7 @@ function CarList() {
       });
     };
 
-    const observerOptions = { threshold: 0.2 };
+    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     if (containerRef.current) observer.observe(containerRef.current);
 

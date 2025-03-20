@@ -199,9 +199,9 @@
     }
 }
 @media (max-width: 600px) {
-    /* Уменьшаем внутренние отступы баннера */
+    /* Уменьшаем внутренние отступы баннера и добавляем отступ сверху */
     .car-banner {
-        padding: 20px;
+        padding-top: 90px;
     }
     
     /* Корректируем заголовок и описание */
@@ -219,11 +219,12 @@
         font-size: 14px;
     }
     
-    /* Статистика: располагаем по вертикали и уменьшаем отступы */
+    /* Статистика: оставляем числа в ряд */
     .stats {
-        flex-direction: column;
+        flex-direction: row; /* вместо column */
         gap: 20px;
         align-items: center;
+        justify-content: center;
     }
     
     .stats h3 {
