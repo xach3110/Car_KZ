@@ -1,0 +1,110 @@
+/* Вся секция баннера — изначально скрыта */
+.hero-banner {
+    position: relative;
+    width: 80%;
+    height: 70vh;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    opacity: 0;
+}
+
+/* Когда добавлен класс animate — анимация активируется */
+.hero-banner.animate {
+    opacity: 1;
+}
+
+/* Анимация выезда вверх */
+.hero-banner.slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* Анимация выезда вниз */
+.hero-banner.slide-down {
+    animation: slideInDown 0.8s ease-out forwards;
+}
+
+/* Фоновое изображение */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Блок поверх изображения */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    color: #fff;
+}
+
+/* Заголовок */
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-align: left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+/* Подзаголовки/описания */
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 0.25rem 0;
+    line-height: 1.4;
+    text-align: left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+/* Кнопка */
+.hero-button {
+    width: 300px;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #14D8CC;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #0fbab0;
+    transform: translateY(-5px); /* Легкое смещение */
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Ключевые кадры анимации */
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

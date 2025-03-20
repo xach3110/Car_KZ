@@ -1,0 +1,77 @@
+/* Основные стили футера */
+.footer {
+    width: 100%;
+    position: relative; /* Если `absolute`, то измените */
+    background: #1e1e1e;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto; /* Важно: прижимает футер вниз */
+  }
+
+/* Контейнер футера */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Логотип и название */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00d4a7;
+    margin-top: 10px;
+}
+
+/* Социальные сети */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #00d4a7;
+}
+
+/* Ссылки */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    color: #00d4a7;
+}
+
+/* Копирайт */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}

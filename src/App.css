@@ -1,0 +1,20 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Контент займет все доступное пространство */
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  box-sizing: border-box;
+}
+
+/* Убираем дефолтные отступы у body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #393e40;
+}

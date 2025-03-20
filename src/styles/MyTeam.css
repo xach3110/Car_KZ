@@ -1,0 +1,101 @@
+/* Стили для team-section-wrapper (начальное состояние + анимация) */
+.team-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  /* Начальное состояние анимации */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.team-section-wrapper.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-section-wrapper.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Остальные существующие стили для заголовков и содержимого */
+.team-header {
+  margin-bottom: 10px;
+}
+
+.team-title {
+  color: #fff;
+  font-size: 32px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-subtitle {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.team-section {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #393e40;
+  color: #fff;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.team-description {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.team-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.team-image {
+  width: 650px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .team-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .team-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .team-image {
+    max-width: 100%;
+  }
+}

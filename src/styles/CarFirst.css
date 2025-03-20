@@ -1,0 +1,200 @@
+/* Общий стиль для .car-banner */
+.car-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #393e40;
+    color: white;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 150px;
+    opacity: 0; /* Начальное состояние – скрыто */
+}
+
+/* После активации анимации элемент становится видимым */
+.car-banner.animate {
+    opacity: 1;
+}
+
+/* Эффект выезда вверх, применяемый при наличии класса slide-up */
+.car-banner.slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Остальные стили остаются без изменений */
+.banner-left {
+    text-align: left;
+    flex: 1;
+    max-width: 30%;
+}
+
+.banner-left h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-left h1 span {
+    color: #14D8CC;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.banner-left p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.banner-button {
+    background-color: #14D8CC;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.banner-button:hover {
+    background-color: #10B8A8;
+    transform: translateY(-3px);
+}
+
+/* Статистика */
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.stats div {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stats div:hover {
+    transform: scale(1.1);
+}
+
+.stats h3 {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.stats p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Правый столбец */
+.banner-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер для изображения */
+.image-container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Стили для изображения */
+.car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Пагинация */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background-color: #14D8CC;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .car-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .banner-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .banner-right {
+        text-align: center;
+    }
+
+    .image-container {
+        width: 80%;
+        height: auto;
+    }
+
+    .car-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .slider-dots {
+        bottom: 10px;
+    }
+}

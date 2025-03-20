@@ -1,0 +1,129 @@
+.partners-section {
+    text-align: center;
+    font-size: 20px;
+    padding: 50px 20px;
+    padding-top: 60px;
+  }
+  
+  .partners-header {
+    margin-bottom: 30px;
+  }
+  
+  .partners-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+  }
+  
+  .partners-subtitle {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .partners-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 1600px;
+    margin: 12;
+  }
+  
+  .partner-card {
+    width: 320px; /* Фиксированная ширина */
+    height: 300px; /* Фиксированная высота */
+    flex: none; /* Отключаем автоматическое растягивание */
+    padding: 40px;
+    padding-top: 90px;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* Размещение элементов по вертикали */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Равномерное распределение */
+}
+  
+  .partner-blue {
+    background-color: #1E4BD6;
+  }
+  
+  .partner-red {
+    background-color: #D62727;
+  }
+  
+  .partner-orange {
+    background-color: #F79D00;
+  }
+  
+  .partner-logo {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .Manheim{
+    width: 400px;
+    height: auto;
+  }
+
+  .small-logo {
+    width: 70px;
+}
+
+    .medium-logo {
+        width: 100px;
+    }
+
+    .large-logo {
+        width: 150px;
+    }
+
+    .partner-card p {
+        flex-grow: 1; /* Заставляет текст растягиваться, занимая доступное пространство */
+        min-height: 80px; /* Фиксирует минимальную высоту блока текста */
+        display: flex;
+        align-items: center; /* Центрирует текст по вертикали */
+        text-align: center;
+    }
+  
+  /* Адаптивность */
+  @media (max-width: 900px) {
+    .partners-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .partner-card {
+      width: 90%;
+    }
+  }
+  /* Начальное состояние секции — скрыто */
+.partners-section {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* После активации анимации секция становится видимой */
+.partners-section.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.partners-section.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

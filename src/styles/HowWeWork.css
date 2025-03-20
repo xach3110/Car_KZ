@@ -1,0 +1,332 @@
+/* Контейнер секции */
+.how-we-work {
+  padding: 40px;
+  color: #fff;
+  background-color: #393e40;
+}
+
+.timeline .step {
+  position: relative;
+}
+
+.timeline .step::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray; /* Изначально серый */
+  transition: background-color 0.3s ease;
+}
+
+.timeline .step.active::before {
+  background-color: var(--active-color); /* Цвет при активном состоянии */
+}
+
+/* Заголовки */
+.hww-title {
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.hww-subtitle {
+  font-size: 16px;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Основной контейнер с левой и правой колонкой */
+.hww-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Левая часть (видео/картинка) */
+.hww-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.hww-video {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  border: none;
+  object-fit: cover;
+}
+.hww-description {
+  font-size: 18px;
+  text-align: left;
+  margin: 0;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Правая часть (шаги + timeline) */
+.hww-right {
+  flex: 1;
+  position: relative;
+}
+
+/* Контейнер для линии */
+.timeline {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 6px; /* Увеличена ширина для лучшей видимости */
+  margin-right: 40px;
+  background: linear-gradient(to bottom, #14D8CC, #666); /* Градиент для линии */
+  border-radius: 3px; /* Закругленные края */
+  overflow: hidden;
+}
+
+/* Залитая часть (прогресс) */
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #14D8CC;
+  transition: height 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+/* Список шагов */
+.steps {
+  margin-left: 56px;
+}
+
+/* Отдельный шаг */
+.step {
+  text-align: left;
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 10px; /* небольшое смещение для удобства */
+}
+
+/* Кружочки (по умолчанию серые) */
+.step::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  top: 50%;
+  width: 16px; /* Увеличен размер кружка */
+  height: 16px;
+  background-color: #666; /* серый по умолчанию */
+  border: 3px solid #393e40; /* Обводка для контраста */
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* При достижении активного состояния кружочек меняет цвет */
+.step.active::before {
+  background-color: #14D8CC;
+  transform: translateY(-50%) scale(1.2); /* Легкое увеличение активного кружка */
+}
+
+.step-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.step-text {
+  font-size: 16px;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .hww-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .timeline {
+    left: 10px;
+  }
+  .steps {
+    margin-left: 40px;
+  }
+}
+
+/* Начальное состояние секции — скрыто */
+.how-we-work {
+  opacity: 0;
+}
+
+/* После активации анимации секция становится видимой */
+.how-we-work.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.how-we-work.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Начальное состояние секции — скрыто */
+.video-reviews {
+  opacity: 0;
+}
+
+/* После активации анимации секция становится видимой */
+.video-reviews.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.video-reviews.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Существующие стили */
+.video-reviews {
+  padding: 40px;
+  color: #fff;
+  background-color: #393e40;
+  text-align: center;
+}
+
+.vr-title {
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.vr-subtitle {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+/* Сетка для карточек */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Карточка */
+.video-card {
+  background-color: #2f3233;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Блок с фоном-миниатюрой */
+.video-thumbnail {
+  width: 100%;
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Иконка Play */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #fff;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Модальное окно (overlay) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Контент внутри модалки */
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Кнопка закрытия */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Контейнер для iframe, чтобы задать пропорции */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

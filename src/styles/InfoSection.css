@@ -1,0 +1,106 @@
+.info-section {
+  margin-top: 50px;
+  margin-left: 180px; /* Отступ слева */
+  margin-right: 190px; /* Отступ справа */
+  background-color: #AEE2FF; /* Голубой фон */
+  display: flex;
+  justify-content: center;
+  border-radius: 12px; /* Закругление углов */
+  opacity: 0; /* Начальное состояние – скрыто */
+}
+  
+  
+  .info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+  }
+  
+  .info-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .info-image {
+    width: 500px;
+    border-radius: 12px;
+    object-fit: cover;
+    align-self: flex-end; /* Прижимаем к нижнему краю */
+  }
+  
+  .info-text-container {
+    flex: 1;
+    text-align: left;
+    color: #1A1A1A;
+  }
+  
+  .info-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .info-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .info-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0088cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .info-button:hover {
+    background-color: #0077b5;
+    transform: scale(1.05);
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .info-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .info-text-container {
+      text-align: center;
+    }
+  }
+  /* Начальное состояние секции — скрыто */
+.info-section {
+  opacity: 0;
+  /* остальные существующие стили остаются без изменений */
+}
+
+/* После активации анимации секция становится видимой */
+.info-section.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.info-section.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

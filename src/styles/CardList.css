@@ -1,0 +1,216 @@
+.car-card {
+  width: 350px;
+  background-color: #2c2f33; /* Темный фон */
+  border-radius: 12px;
+  overflow: hidden;
+  color: #f5f5f5;
+  margin: 16px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column; /* Убедимся, что карточка растягивается */
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.car-card__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-bottom: 2px solid #14D8CC;
+}
+
+.car-card__info {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* центрирует по вертикали */
+  align-items: center;     /* центрирует по горизонтали */
+  height: 100%;            /* если нужно занять всю высоту родителя */
+}
+
+.car-card__name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.car-card__subname {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 8px;
+}
+
+.car-card__specs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.car-card__spec {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.car-card__price-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.car-card__price-label {
+  color: #aaa;
+}
+
+.car-card__price-value {
+  color: #FF6F61;
+  font-weight: bold;
+}
+
+/* Кнопка "Узнать цену под ключ" */
+.car-card__button {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #14D8CC;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: auto; /* Гарантирует, что кнопка прижата к нижнему краю */
+}
+
+.car-card__button:hover {
+  background-color: #10B8A8;
+  transform: scale(1.05);
+}
+
+/* Изображения характеристик */
+.img_card {
+  width: 14px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/* Контейнер для кнопок */
+.car-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Подзаголовок */
+.hww-subtitle {
+  font-size: 16px;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Кнопка подбора */
+.car-button {
+  padding: 16px 24px;
+  background-color: #2c2f33;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.car-button:hover {
+  background-color: #10B8A8;
+  transform: scale(1.05);
+}
+
+/* Кнопка Telegram */
+.car-button-telegram {
+  padding: 16px 24px;
+  background-color: #2c2f33;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.car-button-telegram:hover {
+  background-color: #088bf7;
+  transform: scale(1.05);
+}
+
+.space {
+  height: 120px;
+}
+
+/* Начальное состояние контейнера — скрыто */
+.car-list-container {
+  opacity: 0;
+}
+
+/* После активации анимации элемент становится видимым */
+.car-list-container.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.car-list-container.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.car-list-delivered-container {
+  opacity: 0;
+}
+
+/* При наличии класса animate элемент становится видимым */
+.car-list-delivered-container.animate {
+  opacity: 1;
+}
+
+/* Эффект выезда вверх */
+.car-list-delivered-container.slide-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

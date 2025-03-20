@@ -1,0 +1,157 @@
+.calc-section {
+    color: #fff;
+    padding-left: 200px;
+    padding-right: 200px;
+    opacity: 0; /* Начальное состояние – невидимо */
+  }
+/* Верхняя часть */
+.calc-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 8px;
+}
+
+.calc-title {
+    font-size: 32px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста */
+}
+
+.calc-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    text-align: right;
+    margin: 0;
+    transition: color 0.3s ease; /* Анимация изменения цвета */
+}
+
+.calc-subtitle:hover {
+    color: #fff; /* Изменение цвета при наведении */
+}
+
+/* Основной контейнер: Форма слева, картинка справа */
+.calc-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* Левая колонка с формой */
+.calc-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 16px;
+    justify-content: center;
+}
+
+.calc-label {
+    font-size: 20px;
+    margin-bottom: 1px;
+    text-align: left;
+    padding-top: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Тень текста */
+}
+
+.calc-input {
+    height: 40px;
+    width: 400px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Внутренняя тень */
+    transition: box-shadow 0.3s ease; /* Анимация тени */
+}
+
+.calc-input:focus {
+    box-shadow: 0 0 8px rgba(20, 216, 204, 0.8); /* Тень при фокусе */
+    outline: none;
+}
+
+/* Кнопка */
+.calc-button {
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #14D8CC;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень кнопки */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+}
+
+.calc-button:hover {
+    background-color: #10B8A8;
+    transform: scale(1.05); /* Увеличение при наведении */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Увеличение тени */
+}
+
+/* Правая колонка с изображением */
+.calc-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-image {
+    width: 100%;
+    max-width: 653px;
+    height: auto;
+    border-radius: 8px;
+    position: relative;
+    margin-left: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень изображения */
+    transition: transform 0.3s ease; /* Анимация */
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .calc-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    .calc-subtitle {
+        text-align: center;
+    }
+    .calc-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .calc-left, .calc-right {
+        max-width: 100%;
+    }
+}
+/* Начальное состояние секции — скрыто */
+.calc-section {
+    opacity: 0;
+  }
+  
+  /* После активации анимации секция становится видимой */
+  .calc-section.animate {
+    opacity: 1;
+  }
+  
+  /* Эффект выезда вверх */
+  .calc-section.slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
