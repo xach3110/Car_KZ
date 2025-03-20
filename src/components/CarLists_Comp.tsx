@@ -8,7 +8,7 @@ import GLE from "../assets/CarList/Mers_GLE.jpg";
 import Volvo from "../assets/CarList/volvo-xc90-front.jpg";
 import Lexus from "../assets/CarList/driven-lexus-rx350-square640.jpg";
 import Jaguar from "../assets/CarList/eeabff43f6c9d0f35ea4e456c15175e6.jpg.jpg";
-import Kaen from "../assets/CarList/Kaen.jpg";
+import Kaen from "../assets/CarList/kaen.jpg";
 import Discovery from "../assets/CarList/discovery.jpg";
 import Infinity from "../assets/CarList/preview-928x522.jpg";
 import Akura from "../assets/CarList/0x0.png";
