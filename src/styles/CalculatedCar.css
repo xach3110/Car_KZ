@@ -1,8 +1,9 @@
 .calc-section {
     color: #fff;
-    padding-left: 200px;
-    padding-right: 200px;
+    /* padding-left: 200px;
+    padding-right: 200px; */
     opacity: 0; /* Начальное состояние – невидимо */
+    margin: 100px
   }
 /* Верхняя часть */
 .calc-header {
@@ -102,7 +103,7 @@
 
 .calc-image {
     width: 100%;
-    max-width: 653px;
+    max-width: 800px;
     height: auto;
     border-radius: 8px;
     position: relative;
