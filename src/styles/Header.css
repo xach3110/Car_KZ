@@ -1,71 +1,71 @@
-/* Исходные стили для десктопа */
+/* --- Основной header --- */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #25292b;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1); /* Мягкая тень */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
   z-index: 1000;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Плавный эффект */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.header:hover {
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8); /* Более глубокая тень при наведении */
-  background-color: #1f2325; /* Легкое затемнение */
-}
-
+/* --- Контейнер header --- */
 .header-container {
   max-width: 1300px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 84px;
-  padding-left: 150px;
+  padding: 0 150px 0 150px;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
+/* --- Лого --- */
 .header-logo {
   height: 45px;
   transition: transform 0.3s ease;
 }
-
 .header-logo:hover {
-  transform: scale(1.1); /* Увеличение логотипа при наведении */
+  transform: scale(1.1);
 }
 
+/* --- Навигация --- */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
 .nav-links a {
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .nav-links a:hover {
-  transform: scale(1.1); /* Легкое увеличение иконок */
-  color: #14D8CC; /* Подсветка */
+  transform: scale(1.1);
+  color: #14D8CC;
 }
 
+/* --- Правая часть header --- */
 .header-right {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
+/* --- Телефон --- */
 .phone-number {
   font-size: 16px;
   font-weight: 500;
   color: white;
   transition: color 0.3s ease;
 }
-
 .phone-number:hover {
-  color: #14D8CC; /* Подсветка телефона */
+  color: #14D8CC;
 }
 
+/* --- Кнопка "Подобрать авто" --- */
 .car-button {
   background-color: #14D8CC;
   color: black;
@@ -76,29 +76,27 @@
   cursor: pointer;
   transition: all 0.3s ease, box-shadow 0.3s ease;
 }
-
 .car-button:hover {
   background-color: #10B8A8;
-  box-shadow: 0px 4px 10px rgba(20, 216, 204, 0.5); /* Тень при наведении */
+  box-shadow: 0px 4px 10px rgba(20, 216, 204, 0.5);
 }
 
+/* --- Иконка бургер-меню --- */
 .menu-button {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 26px;
   display: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1100;
+  position: relative;
 }
 
-.menu-button:hover {
-  transform: rotate(90deg); /* Анимация вращения */
-  color: #14D8CC; /* Подсветка */
-}
-
+/* --- Мобильное меню --- */
 .mobile-menu {
   position: absolute;
-  top: 100%;
+  top: 84px; /* под фиксированный header */
   left: 0;
   width: 100%;
   background-color: #333;
@@ -109,13 +107,13 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+  box-sizing: border-box;
 }
-
 .mobile-menu.active {
   opacity: 1;
   visibility: visible;
 }
-
 .mobile-menu a {
   display: flex;
   align-items: center;
@@ -125,41 +123,33 @@
   font-size: 16px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .mobile-menu a:hover {
-  color: #14D8CC; /* Подсветка ссылок */
-  transform: translateX(5px); /* Легкое смещение */
+  color: #14D8CC;
+  transform: translateX(5px);
 }
 
-/* Адаптивность для планшетов и мобильных устройств (не трогая стили на ПК) */
+/* --- Адаптация до 768px --- */
 @media (max-width: 768px) {
   .header-container {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
+
   .nav-links,
   .phone-number {
     display: none;
   }
-  
+
   .menu-button {
     display: block;
   }
 }
 
-/* Дополнительная мобильная адаптация для узких экранов */
+/* --- Адаптация до 600px --- */
 @media (max-width: 600px) {
-  .header-container {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  
   .header-logo {
     height: 35px;
   }
-  
+
   .car-button {
     padding: 6px 15px;
     font-size: 14px;
