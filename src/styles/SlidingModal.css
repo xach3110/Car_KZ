@@ -1,68 +1,89 @@
-/* Оверлей модального окна – занимает весь экран, затемнённый фон */
+/* Фон модального окна */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 10000;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Контейнер модального окна */
 .modal-content {
-  position: relative;
-  background-color: #fff;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-content {
+  transform: translateY(0);
 }
 
 /* Кнопка закрытия */
-.modal-close {
+.close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 28px;
+  font-size: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #000;
+  color: #888;
+  transition: color 0.2s ease;
 }
 
-/* Контейнер для iframe с сохранением соотношения сторон 16:9 */
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
+.close-btn:hover {
+  color: #555;
 }
 
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+/* Стили для формы */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Адаптация для мобильных устройств */
-@media only screen and (max-width: 600px) {
-  .modal-content {
-      width: 95%;
-      max-width: 95%;
-      border-radius: 4px; /* уменьшенный радиус для компактности */
-  }
-  
-  .modal-close {
-      top: 5px;
-      right: 10px;
-      font-size: 24px;
-  }
+input, textarea {
+  width: 97%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: teal;
+  outline: none;
+}
+
+button {
+  background: teal;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+/* Дополнительные стили */
+.label, .label2 {
+  color: #333;
+  font-size: 14px;
 }

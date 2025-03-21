@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "../styles/SlidingModal.css";
+import "../styles/SlidingModal.css"
 
 interface SlidingModalProps {
   isOpen: boolean;

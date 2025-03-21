@@ -221,7 +221,9 @@
     width: 90%;
     margin: 10px auto;
   }
-  
+  .car-button-container {
+    padding-bottom: 10px;
+  }
   /* Уменьшаем отступы в блоке информации */
   .car-card__info {
     padding: 15px;
