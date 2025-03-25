@@ -9,7 +9,7 @@ export default function CalculationForm() {
   const sectionRef = useRef<HTMLElement>(null);
 
   const botToken = "7877422434:AAHjowjGiF21-qENdDt_Fsiu_IOWANYQmw8"; // Твой токен бота
-  const chatId = "1039289071"; // Твой chat_id
+  const chatId = "-4794025014"; // Твой chat_id
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Останавливаем стандартное поведение формы

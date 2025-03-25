@@ -13,7 +13,7 @@ const SlidingModal: React.FC<SlidingModalProps> = ({ isOpen, onClose }) => {
   const [comment, setComment] = useState("");
 
   const botToken = "7877422434:AAHjowjGiF21-qENdDt_Fsiu_IOWANYQmw8";
-  const chatId = "1039289071";
+  const chatId = "-4794025014";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Предотвращаем стандартное поведение формы
