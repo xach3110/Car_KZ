@@ -1,14 +1,13 @@
 /* Основные стили футера */
 .footer {
-    width: 100%;
-    position: relative; /* Если `absolute`, то измените */
-    background: #1e1e1e;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: auto; /* Важно: прижимает футер вниз */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    background-color:#1e1e1e;
 }
-
 /* Контейнер футера */
 .footer-container {
     display: flex;
